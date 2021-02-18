@@ -1,0 +1,56 @@
+@mixin clearfix() {
+  &:after {
+    display: block;
+    height: 0;
+    clear: both;
+    content: "";
+  }
+}
+
+@mixin fontreset() {
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: -4px;
+}
+
+@mixin clearfix() {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin bg_img($repeat: no-repeat, $size: cover, $position: center center) {
+  background-repeat: $repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
+@mixin no-touch-shadow($property) {
+  .no-touch & {
+    box-shadow: $property;
+  }
+}
+
+@mixin transition($prop: all, $time: 0.2s, $duration: ease-in-out) {
+  transition: $prop $time $duration;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+}
