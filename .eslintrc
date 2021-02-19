@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "root": true,
   "env": {
     "es6": true,
     "browser": true,
@@ -14,7 +14,7 @@
         "objectsInObjects": true
       }
     ],
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": 0,
     "operator-linebreak": "off",
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "no-tabs": "off",
@@ -25,7 +25,11 @@
     "max-len": "off"
   },
   "extends": [
+    "plugin:vue/essential",
     "eslint:recommended",
     "google"
-  ]
+  ],
+  "parserOptions": {
+    "parser": "babel-eslint"
+  }
 }

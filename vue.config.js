@@ -1,4 +1,15 @@
+const path = require('path')
+
 module.exports = {
+  configureWebpack: {
+    resolve: {
+      extensions: ['.js'],
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+        '@core': path.resolve(__dirname, 'src/core')
+      }
+    }
+  },
   css: {
     loaderOptions: {
       // pass options to sass-loader
