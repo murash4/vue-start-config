@@ -1,0 +1,28 @@
+.levels {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.levels__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.levels__progress {
+  flex: 1 1 auto;
+  display: flex;
+  margin: 0 75px;
+}
+
+.levels__progress-item {
+  flex: 1 1 auto;
+  height: 10px;
+  margin-right: 1px;
+  background-color: #ccc;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

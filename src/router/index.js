@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Levels from '../views/Levels.vue'
+import Levels from '../views/stats.vue'
 
 Vue.use(VueRouter)
 
