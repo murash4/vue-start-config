@@ -12,6 +12,7 @@
         v-for="(level, index) in slicedLevels"
         :key="index"
         class="levels__progress-item"
+        :style="`width: ${progressItemWidth}`"
       >{{ level.startPoints }}</div>
       <div
         class="levels__progress-line"
@@ -43,6 +44,13 @@ export default {
      */
     slicedLevels () {
       return this.levels.slice(1)
+    },
+    /**
+     * Возвращает ширину (%) элментов линии прогресса пользователя
+     * @return {string}
+     */
+    progressItemWidth () {
+      return 1 / this.slicedLevels.length * 100 + '%'
     },
     /**
      * Возвращает следующий уровень пользователя
