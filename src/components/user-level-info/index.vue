@@ -1,7 +1,7 @@
 <template>
   <div class="user-level-info">
     <div class="user-level-info__title">Накоплено поинтов</div>
-    <div class="user-level-info__points">{{ currentPoints }}</div>
+    <digital-odometer :value="currentPoints" class="user-level-info__points" />
     <div class="user-level-info__levels">
       <div class="user-level-info__level-start">{{ currentLevel }}</div>
       <div v-if="hasNextLevel" class="user-level-info__level-arrow">=></div>
@@ -9,9 +9,7 @@
     </div>
     <div v-if="hasNextLevel" class="user-level-info__remainder-text">До следующего уровня осталось</div>
     <div v-if="hasNextLevel" class="user-level-info__remainder-points">{{ leftPoints }}</div>
-    {{formattedEndAt}}
     <timer-block
-      v-if="statusType !== 'expired'"
       :starttime="0"
       :endtime="formattedEndAt"
       days-full
@@ -21,12 +19,14 @@
 
 <script>
 import TimerBlock from '@/common-components/timer-block'
+import DigitalOdometer from '@/common-components/digital-odometer'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'user-level-info',
   components: {
-    TimerBlock
+    TimerBlock,
+    DigitalOdometer
   },
   computed: {
     ...mapGetters('user', {

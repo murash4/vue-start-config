@@ -42,7 +42,7 @@
       </div>
       <div class="timer-block__label format">мин</div>
     </div>
-    <div v-if="days === '0'" class="timer-block__item sec">
+    <div class="timer-block__item sec">
       <div v-if="!separateDate" class="timer-block__count number">{{seconds}}</div>
       <div
           v-else

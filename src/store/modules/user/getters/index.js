@@ -24,6 +24,6 @@ export default {
    * @return {boolean}
    */
   hasNextLevel (state, getters, rootState, rootGetters) {
-    return state.getCurrentLevel < rootGetters['levels/getLevels']
+    return getters.getCurrentLevel < rootGetters['levels/getLevels'].length
   }
 }

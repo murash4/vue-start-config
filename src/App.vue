@@ -6,11 +6,19 @@
 
 <script>
 export default {
+  data () {
+    return {
+      intervalValue: 1000
+    }
+  },
   created () {
     // Инициализация таймеров на страницах
     this.$bus.on('init-timer-blocks', this.initTimerBlocks)
   },
   methods: {
+    /**
+     * Запуск события для обновления таймеров
+     */
     initTimerBlocks () {
       clearInterval(this.interval)
 
