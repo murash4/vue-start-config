@@ -11,6 +11,7 @@
 }
 
 .levels__progress {
+  position: relative;
   flex: 1 1 auto;
   display: flex;
   margin: 0 75px;
@@ -25,4 +26,12 @@
   &:last-child {
     margin-right: 0;
   }
+}
+
+.levels__progress-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: green;
 }

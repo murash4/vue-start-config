@@ -14,5 +14,16 @@ export default {
    */
   getCurrentPoints (state) {
     return state.data.currentPoints
+  },
+  /**
+   * Метод, отдающий boolean значение, есть ли следующий уровень
+   * @param {object} state
+   * @param {object} getters
+   * @param {object} rootState
+   * @param {object} rootGetters
+   * @return {boolean}
+   */
+  hasNextLevel (state, getters, rootState, rootGetters) {
+    return state.getCurrentLevel < rootGetters['levels/getLevels']
   }
 }

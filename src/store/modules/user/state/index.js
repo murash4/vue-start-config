@@ -1,6 +1,6 @@
 export default {
   data: {
-    currentLevel: 3,
+    currentLevel: 4,
     currentPoints: 2512
   }
 }
