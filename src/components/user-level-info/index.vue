@@ -9,14 +9,25 @@
     </div>
     <div v-if="hasNextLevel" class="user-level-info__remainder-text">До следующего уровня осталось</div>
     <div v-if="hasNextLevel" class="user-level-info__remainder-points">{{ leftPoints }}</div>
+    {{formattedEndAt}}
+    <timer-block
+      v-if="statusType !== 'expired'"
+      :starttime="0"
+      :endtime="formattedEndAt"
+      days-full
+    />
   </div>
 </template>
 
 <script>
+import TimerBlock from '@/common-components/timer-block'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'user-level-info',
+  components: {
+    TimerBlock
+  },
   computed: {
     ...mapGetters('user', {
       currentLevel: 'getCurrentLevel',
@@ -48,6 +59,15 @@ export default {
       }
 
       return 0
+    },
+    // /**
+    //  * Возвращает время завершения таймера
+    //  * @return {number}
+    //  */
+    formattedEndAt () {
+      const currentDate = new Date()
+
+      return (new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1)).getTime()
     }
   }
 }

@@ -1,0 +1,30 @@
+.timer-block {
+  display: flex;
+  @include fontreset();
+}
+
+.timer-block__item {
+}
+
+.timer-block__count {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  color: #000;
+  letter-spacing: -0.27px;
+  text-align: center;
+}
+
+.timer-block__count-item {
+}
+
+.timer-block__label {
+  overflow: hidden;
+  font-size: rem-sm(9px);
+  line-height: 1.2;
+  color: transparentize(#000, 0.4);
+  letter-spacing: -0.44px;
+  text-align: center;
+}
