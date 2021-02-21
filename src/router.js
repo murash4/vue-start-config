@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Levels from '../views/Levels.vue'
 
 Vue.use(VueRouter)
 
@@ -8,7 +7,11 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Levels
+    component: () => import('./routes/levels')
+  },
+  {
+    path: '*',
+    redirect: '/'
   }
 ]
 
