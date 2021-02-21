@@ -1,5 +1,9 @@
+body {
+  background-color: $blue1;
+}
+
 .app {
-  padding: 0 10px;
+  padding: 100px 10px;
 }
 
 .container {
@@ -7,17 +11,22 @@
   min-width: 1320px;
   max-width: 1680px;
   margin: 0 auto;
+  border: 8px solid $blue2;
 }
 
 .container__side {
   width: 356px;
+  background-color: $blue6;
 }
 
 .container__content {
   flex: 1 1 auto;
-  margin-right: 10px;
+  padding: 15px 30px;
+  border-right: 8px solid $blue2;
+  background-color: $blue3;
 
   &:last-child {
     margin-right: 0;
+    border: none;
   }
 }

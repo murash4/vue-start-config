@@ -1,4 +1,5 @@
 .user-level-info {
+  padding: 44px 15px 15px;
   text-align: center;
 }
 
@@ -6,4 +7,121 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.user-level-info__title {
+  margin-bottom: 20px;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: normal;
+  color: $white;
+  text-transform: uppercase;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.user-level-info__points {
+  margin-bottom: 37px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.user-level-info__levels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-level-info__level {
+  &:before {
+    content: '';
+    display: block;
+    height: 0;
+    border-bottom: 4px solid;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    border-top: 6px solid;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+  }
+}
+
+.user-level-info__level--start {
+  &:before {
+    border-bottom-color: $brown1;
+  }
+
+  &:after {
+    border-top-color: $brown1;
+  }
+}
+
+.user-level-info__level--end {
+  &:before {
+    border-bottom-color: $gray1;
+  }
+
+  &:after {
+    border-top-color: $gray1;
+  }
+}
+
+.user-level-info__level-num {
+  width: 16px;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 15px;
+  color: $blue6;
+}
+
+.user-level-info__level-num--start {
+  background-color: $brown1;
+}
+
+.user-level-info__level-num--end {
+  background-color: $gray1;
+}
+
+.user-level-info__level-arrow {
+  margin: 0 16px;
+  color: $gray1;
+}
+
+.user-level-info__remainder-text {
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: normal;
+  color: $white;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.user-level-info__remainder-points {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.user-level-info__separator {
+  margin-bottom: 20px;
+  border-bottom: 1px solid $blue1;
 }

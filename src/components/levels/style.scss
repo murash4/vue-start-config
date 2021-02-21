@@ -8,23 +8,51 @@
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
+  padding-top: 40px;
 }
 
 .levels__progress {
   position: relative;
   flex: 1 1 auto;
   display: flex;
-  margin: 0 75px;
+  margin: 0 50px 22px;
 }
 
 .levels__progress-item {
+  position: relative;
   flex: 1 1 auto;
-  height: 10px;
-  margin-right: 1px;
-  background-color: #ccc;
+  height: 8px;
+  background-color: $blue1;
 
   &:last-child {
     margin-right: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 1px;
+    height: 100%;
+    background-color: $blue5;
+  }
+}
+
+.levels__progress-item-text {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  transform: translate3d(50%, 0, 0);
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: normal;
+  color: $gray3;
+
+  .levels__progress-item--colored & {
+    color: $brown1;
   }
 }
 
@@ -32,6 +60,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  min-width: 2px;
   height: 100%;
-  background-color: green;
+  background-color: $brown1;
 }

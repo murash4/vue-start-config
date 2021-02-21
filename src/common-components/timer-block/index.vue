@@ -12,7 +12,7 @@
             class="timer-block__count-item"
         >{{item}}</div>
       </div>
-      <div class="timer-block__label format">дней</div>
+      <div class="timer-block__label format">дн.</div>
     </div>
     <div v-if="hours !== '0'" class="timer-block__item hour">
       <div v-if="!separateDate" class="timer-block__count number">{{hours}}</div>
@@ -26,7 +26,7 @@
             class="timer-block__count-item"
         >{{item}}</div>
       </div>
-      <div class="timer-block__label format">час</div>
+      <div class="timer-block__label format">ч.</div>
     </div>
     <div class="timer-block__item min">
       <div v-if="!separateDate" class="timer-block__count number">{{minutes}}</div>
@@ -40,7 +40,7 @@
             class="timer-block__count-item"
         >{{item}}</div>
       </div>
-      <div class="timer-block__label format">мин</div>
+      <div class="timer-block__label format">мин.</div>
     </div>
     <div class="timer-block__item sec">
       <div v-if="!separateDate" class="timer-block__count number">{{seconds}}</div>
@@ -54,7 +54,7 @@
             class="timer-block__count-item"
         >{{item}}</div>
       </div>
-      <div class="timer-block__label format">сек</div>
+      <div class="timer-block__label format">сек.</div>
     </div>
   </div>
 </template>
@@ -77,7 +77,7 @@ export default {
       timer: '',
       start: '',
       end: '',
-      days: '0',
+      days: '00',
       daysArr: [],
       minutes: '00',
       minutesArr: [],
@@ -140,7 +140,9 @@ export default {
       // Time calculations for days, hours, minutes and seconds
       this.remainingTime = dist
 
-      this.days = Math.floor(dist / (1000 * 60 * 60 * 24)).toString()
+      let days = Math.floor(dist / (1000 * 60 * 60 * 24)).toString()
+      if (days.length === 1) days = '0' + days
+      this.days = days
 
       let hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString()
       if (hours.length === 1) hours = '0' + hours

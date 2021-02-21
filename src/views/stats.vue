@@ -1,6 +1,7 @@
 <template>
   <div class="container stats">
     <div class="container__content">
+      <div class="stats__title">Уровень в следующем месяце</div>
       <levels />
     </div>
     <div class="container__side">
@@ -21,3 +22,5 @@ export default {
   }
 }
 </script>
+
+<style src="./style.scss" lang="scss"></style>

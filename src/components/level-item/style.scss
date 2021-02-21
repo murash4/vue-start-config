@@ -1,9 +1,130 @@
 .level-item {
+  position: relative;
+  width: 100px;
+  margin-bottom: 20px;
   cursor: pointer;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 0;
+    border-bottom: 15px solid $gray1;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    border-top: 20px solid $gray1;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+  }
+}
+
+.level-item--current,
+.level-item--previous {
+  &:before {
+    border-bottom-color: $brown1;
+  }
+
+  &:after {
+    border-top-color: $brown1;
+  }
+}
+
+.level-item--previous {
+  opacity: 0.6;
+}
+
+.level-item__current-title {
+  position: absolute;
+  left: 50%;
+  top: -30px;
+  transform: translateX(-50%);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: normal;
+  color: $brown1;
+  white-space: nowrap;
+}
+
+.level-item__box {
+  padding: 0 4px 3px;
+  background-color: $gray1;
+
+  .level-item--current &,
+  .level-item--previous & {
+    background-color: $brown1;
+  }
+}
+
+.level-item__title {
+  padding-top: 4px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: normal;
+  color: $gray2;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .level-item--current &,
+  .level-item--previous & {
+    color: $white;
+  }
 }
 
 .level-item__info {
-  width: 150px;
-  margin-bottom: 20px;
-  background-color: #ccc;
+  position: relative;
+  padding: 0 4px 5px;
+  background-color: $blue4;
+
+  .level-item--current &,
+  .level-item--previous & {
+    background-color: $brown2;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    width: 100%;
+    border-top: 18px solid $blue1;
+    border-left: 46px solid transparent;
+    border-right: 46px solid transparent;
+
+    .level-item--current &,
+    .level-item--previous & {
+      border-top-color: $brown2;
+    }
+  }
+}
+
+.level-item__info-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 25px;
+  border-bottom: 1px solid $gray1;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: normal;
+  color: $gray2;
+
+  .level-item--current &,
+  .level-item--previous & {
+    border-bottom-color: $brown1;
+    color: $white;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
 }

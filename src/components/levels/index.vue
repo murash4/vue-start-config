@@ -11,9 +11,14 @@
       <div
         v-for="(level, index) in slicedLevels"
         :key="index"
-        class="levels__progress-item"
+        :class="[
+          'levels__progress-item',
+          {'levels__progress-item--colored': level.id <= currentLevel}
+        ]"
         :style="`width: ${progressItemWidth}`"
-      >{{ level.startPoints }}</div>
+      >
+        <div class="levels__progress-item-text">{{ level.startPoints | with_separator }}</div>
+      </div>
       <div
         class="levels__progress-line"
         :style="`width: ${userProgress};`"

@@ -3,12 +3,17 @@
     <div class="user-level-info__title">Накоплено поинтов</div>
     <digital-odometer :value="currentPoints" class="user-level-info__points" />
     <div class="user-level-info__levels">
-      <div class="user-level-info__level-start">{{ currentLevel }}</div>
+      <div class="user-level-info__level user-level-info__level--start">
+        <div class="user-level-info__level-num user-level-info__level-num--start">{{ currentLevel }}</div>
+      </div>
       <div v-if="hasNextLevel" class="user-level-info__level-arrow">=></div>
-      <div v-if="hasNextLevel" class="user-level-info__level-end">{{ nextLevel }}</div>
+      <div v-if="hasNextLevel" class="user-level-info__level user-level-info__level--end">
+        <div class="user-level-info__level-num user-level-info__level-num--end">{{ nextLevel }}</div>
+      </div>
     </div>
-    <div v-if="hasNextLevel" class="user-level-info__remainder-text">До следующего уровня осталось</div>
-    <div v-if="hasNextLevel" class="user-level-info__remainder-points">{{ leftPoints }}</div>
+    <div class="user-level-info__remainder-text">До следующего уровня осталось</div>
+    <digital-odometer :value="leftPoints" class="user-level-info__remainder-points" />
+    <div class="user-level-info__separator"></div>
     <timer-block
       :starttime="0"
       :endtime="formattedEndAt"

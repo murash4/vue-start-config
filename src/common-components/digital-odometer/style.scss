@@ -14,3 +14,36 @@ $transitionDuration: 1.3s;
 .odometer * {
   will-change: transform;
 }
+
+.odometer-inside {
+  display: flex;
+}
+
+.odometer-formatting-mark {
+  .user-level-info__points & {
+    width: 10px;
+  }
+
+  .user-level-info__remainder-points & {
+    width: 5px;
+  }
+}
+
+.odometer-value,
+.odometer-digit-spacer {
+  .user-level-info__points & {
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 1;
+    letter-spacing: normal;
+    color: $white;
+  }
+
+  .user-level-info__remainder-points & {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: normal;
+    color: $white;
+  }
+}
