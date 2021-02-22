@@ -1,7 +1,7 @@
 /*
 переназначаем длительность анимации, чтобы не было дерганья, так как данные приходят каждую секунду
 */
-$transitionDuration: 1.3s;
+$transitionDuration: 0.5s;
 .odometer.odometer-animating-up .odometer-ribbon-inner,
 .odometer.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
   -webkit-transition-duration: $transitionDuration !important;

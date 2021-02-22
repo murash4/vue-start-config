@@ -23,7 +23,7 @@ export default {
       type: Number
     },
     duration: {
-      default: 2000,
+      default: 500,
       type: Number
     },
     format: {
