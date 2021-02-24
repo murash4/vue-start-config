@@ -63,4 +63,5 @@
   min-width: 2px;
   height: 100%;
   background-color: $brown1;
+  @include transition();
 }

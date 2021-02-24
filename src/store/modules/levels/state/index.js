@@ -45,7 +45,7 @@ export default {
       id: 5,
       exchange: 5,
       startPoints: 25000,
-      name: 'Level 6',
+      name: 'Level 5',
       bonus: 5000,
       cashback: '10%'
     },
@@ -53,7 +53,7 @@ export default {
       id: 6,
       exchange: 5,
       startPoints: 100000,
-      name: 'Level 7',
+      name: 'Level 6',
       bonus: 10000,
       cashback: '15%'
     }
