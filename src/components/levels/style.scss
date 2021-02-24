@@ -56,6 +56,30 @@
   }
 }
 
+.levels__progress-item-icon {
+  position: absolute;
+  right: 0;
+  bottom: 16px;
+  transform: translateX(50%);
+}
+
+.levels__progress-item-icon--checkbox {
+  width: 9px;
+  height: auto;
+  color: $brown1;
+}
+
+.levels__progress-item-icon--lock {
+  width: 8px;
+  height: auto;
+  color: $gray4;
+}
+
+.levels__progress-item-money {
+  width: 6px;
+  height: auto;
+}
+
 .levels__progress-line {
   position: absolute;
   left: 0;

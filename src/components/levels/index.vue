@@ -13,11 +13,27 @@
         :key="index"
         :class="[
           'levels__progress-item',
-          {'levels__progress-item--colored': level.id <= currentLevel}
+          {'levels__progress-item--colored': isPassedLevel}
         ]"
         :style="`width: ${progressItemWidth}`"
       >
-        <div class="levels__progress-item-text">{{ level.startPoints | with_separator }}</div>
+        <icon
+          v-if="isPassedLevel(level)"
+          icon-name="checkbox"
+          class="levels__progress-item-icon levels__progress-item-icon--checkbox"
+        />
+        <icon
+          v-else
+          icon-name="lock"
+          class="levels__progress-item-icon levels__progress-item-icon--lock"
+        />
+        <div class="levels__progress-item-text">
+          {{ level.startPoints | with_separator }}
+          <icon
+            icon-name="money"
+            class="levels__progress-item-money"
+          />
+        </div>
       </div>
       <div
         class="levels__progress-line"
@@ -29,12 +45,14 @@
 
 <script>
 import LevelItem from '@/components/level-item'
+import Icon from '@/common-components/icon'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'levels',
   components: {
-    LevelItem
+    LevelItem,
+    Icon
   },
   computed: {
     ...mapGetters('levels', { levels: 'getLevels' }),
@@ -89,6 +107,16 @@ export default {
 
       // Прогрес пользователя в %
       return (intervalLength * filledIntervals + intervalLength * currentProgress) * 100 + '%'
+    }
+  },
+  methods: {
+    /**
+     * Флаг, что уровень уже был получен
+     * @param {object} level - объект с данными о конкретном уровне
+     * @return {boolean}
+     */
+    isPassedLevel (level) {
+      return level.id <= this.currentLevel
     }
   }
 }

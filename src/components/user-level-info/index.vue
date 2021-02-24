@@ -1,18 +1,34 @@
 <template>
   <div class="user-level-info">
     <div class="user-level-info__title">Накоплено поинтов</div>
-    <digital-odometer :value="currentPoints" class="user-level-info__points" />
+    <div class="user-level-info__points-wr">
+      <digital-odometer :value="currentPoints" class="user-level-info__points" />
+      <icon
+        icon-name="money"
+        class="user-level-info__points-icon"
+      />
+    </div>
     <div class="user-level-info__levels">
       <div class="user-level-info__level user-level-info__level--start">
         <div class="user-level-info__level-num user-level-info__level-num--start">{{ currentLevel }}</div>
       </div>
-      <div v-if="hasNextLevel" class="user-level-info__level-arrow">=></div>
+      <icon
+        v-if="hasNextLevel"
+        icon-name="arrow"
+        class="user-level-info__level-arrow"
+      />
       <div v-if="hasNextLevel" class="user-level-info__level user-level-info__level--end">
         <div class="user-level-info__level-num user-level-info__level-num--end">{{ nextLevel }}</div>
       </div>
     </div>
     <div class="user-level-info__remainder-text">До следующего уровня осталось</div>
-    <digital-odometer :value="leftPoints" class="user-level-info__remainder-points" />
+    <div class="user-level-info__remainder-points-wr">
+      <digital-odometer :value="leftPoints" class="user-level-info__remainder-points" />
+      <icon
+        icon-name="money"
+        class="user-level-info__remainder-points-icon"
+      />
+    </div>
     <div class="user-level-info__separator"></div>
     <timer-block
       :starttime="0"
@@ -25,13 +41,15 @@
 <script>
 import TimerBlock from '@/common-components/timer-block'
 import DigitalOdometer from '@/common-components/digital-odometer'
+import Icon from '@/common-components/icon'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'user-level-info',
   components: {
     TimerBlock,
-    DigitalOdometer
+    DigitalOdometer,
+    Icon
   },
   computed: {
     ...mapGetters('user', {
