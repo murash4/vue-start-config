@@ -34,6 +34,13 @@ export default {
 }
 </script>
 
+<style lang="css">
+  @import "assets/fonts/Roboto/Black/stylesheet.css";
+  @import "assets/fonts/Roboto/Medium/stylesheet.css";
+  @import "assets/fonts/Roboto/Regular/stylesheet.css";
+  @import "assets/fonts/Montserrat/Black/stylesheet.css";
+</style>
+
 <style lang="scss">
   @import "assets/scss/main.scss";
 </style>
