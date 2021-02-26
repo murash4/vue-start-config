@@ -1,5 +1,5 @@
 .user-level-info {
-  padding: 44px 15px 15px;
+  padding: 42px 15px 13px;
   text-align: center;
 }
 
@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 
   &:last-child {
     margin-bottom: 0;
@@ -15,9 +15,10 @@
 }
 
 .user-level-info__title {
-  margin-bottom: 20px;
+  margin-bottom: 3px;
+  font-weight: 500;
   font-size: 12px;
-  line-height: 1;
+  line-height: 14px;
   letter-spacing: normal;
   color: $white;
   text-transform: uppercase;
@@ -31,7 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-bottom: 37px;
+  margin-bottom: 24px;
 
   &:last-child {
     margin-bottom: 0;
@@ -41,6 +42,8 @@
 .user-level-info__points-icon {
   width: 15px;
   height: auto;
+  margin-left: 10px;
+  margin-bottom: 14px;
   color: $white;
 }
 
@@ -91,9 +94,9 @@
 
 .user-level-info__level-num {
   width: 16px;
-  font-weight: bold;
-  font-size: 10px;
-  line-height: 15px;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 14px;
   color: $blue6;
 }
 
@@ -113,9 +116,9 @@
 }
 
 .user-level-info__remainder-text {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   font-size: 12px;
-  line-height: 1;
+  line-height: 14px;
   letter-spacing: normal;
   color: $white;
 
@@ -128,7 +131,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 
   &:last-child {
     margin-bottom: 0;
@@ -138,10 +141,12 @@
 .user-level-info__remainder-points-icon {
   width: 6px;
   height: auto;
+  margin-left: 3px;
+  margin-bottom: 4px;
   color: $white;
 }
 
 .user-level-info__separator {
-  margin-bottom: 20px;
+  margin-bottom: 13px;
   border-bottom: 1px solid $blue1;
 }

@@ -5,7 +5,7 @@
       :key="index"
       :class="[
           'levels-progress__item',
-          {'levels-progress__item--colored': isPassedLevel}
+          {'levels-progress__item--colored': isPassedLevel(level)}
         ]"
       :style="`width: ${progressItemWidth}`"
     >

@@ -1,6 +1,7 @@
 .levels {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 14px;
 }
 
 .levels__items {
@@ -8,5 +9,5 @@
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 27px;
 }

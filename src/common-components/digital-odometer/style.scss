@@ -32,17 +32,19 @@ $transitionDuration: 0.5s;
 .odometer-value,
 .odometer-digit-spacer {
   .user-level-info__points & {
-    font-weight: bold;
-    font-size: 45px;
-    line-height: 1;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 70px;
     letter-spacing: normal;
     color: $white;
   }
 
   .user-level-info__remainder-points & {
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 1;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 19px;
     letter-spacing: normal;
     color: $white;
   }
